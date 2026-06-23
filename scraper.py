@@ -7,5 +7,4 @@ response = requests.get(url)
 
 soup = BeautifulSoup(response.text, "html.parser")
 
-print("Website title:")
-print(soup.title.text)
+print(soup.prettify()[:5000])
