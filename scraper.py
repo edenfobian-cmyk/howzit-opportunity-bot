@@ -1,10 +1,10 @@
 import requests
-from bs4 import BeautifulSoup
 
 url = "https://www.graduates24.com"
 
 response = requests.get(url)
 
-soup = BeautifulSoup(response.text, "html.parser")
+with open("page.html", "w", encoding="utf-8") as f:
+    f.write(response.text)
 
-print(soup.prettify()[:5000])
+print("Saved page")
